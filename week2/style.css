@@ -1,0 +1,16 @@
+
+h1 {
+    color: crimson;
+}
+
+#header1 {
+    color: aqua;
+}
+
+.myHeading {
+    color: green;
+}
+
+.last {
+    display: block;
+}
