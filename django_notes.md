@@ -233,3 +233,8 @@ The same could also be achieved with query strings like so.
 The key-value pairs in query strings like *?name=John&id=1* will be added to the request.GET property. So they can be retrieved with *request.GET['name']* and *request.GET['id']*
 
 Html forms send their data in it's action attribute using the POST method. Sending data with POST is more secure because the data is not visible in the URL. Post requests need a **{% csrf_token %}**. This prevents cross-site forgery attacks. 
+
+* [Django Writing Views](https://docs.djangoproject.com/en/4.1/topics/http/views/)
+* [Django Class Based Views](https://docs.djangoproject.com/en/4.1/topics/class-based-views/)
+* [Django render() function](https://docs.djangoproject.com/en/4.1/topics/http/shortcuts/#render)
+* [Getting Query Parameters](https://docs.djangoproject.com/en/4.1/topics/http/urls/#path-converters)
