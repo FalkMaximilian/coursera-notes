@@ -15,22 +15,13 @@ Web server and web browser communicate usign the *Hypertext Transfer Protocol* *
 ## Web hosting
 A website is hosted on a server and there are several types of hosting.
 
-* Shared hosting
-```
-Shares physical hardware with multiple web sites
-```
-* Virtual Private Hosting
-``` 
-Shares physical hardware which is split into virtual servers of a fixed size 
-```
-* Dedicated Hosting
-```
-Entire Server used for one website
-```
-* Cloud Hosting
-```
-Combines physical and virtual servers. Website can run on multiple virtual servers on multiple hardware servers
-```
+* Shared hosting ` Shares physical hardware with multiple web sites `
+
+* Virtual Private Hosting `Shares physical hardware which is split into virtual servers of a fixed size`
+
+* Dedicated Hosting`Entire Server used for one website`
+
+* Cloud Hosting `Combines physical and virtual servers. Website can run on multiple virtual servers on multiple hardware servers`
 
 ## Internet Protocols
 ### IPv4 and IPv6
@@ -46,25 +37,29 @@ Packets can get lost, become damaged, lost or arrive out of order
 
 
 TCP - Transmission Control Protocol
-```
+
+`
 TCP cares that packages do arrive are not corrupted and for data that needs to be in the correct order. USed for Images, HTTP and anything that can not tolerate data loss.
-```
+`
+
 UDP - User Datagram Protocol
-```
-UDP only cares that the packages are not corrupted. Used for application that can tolerate some data loss. (I.e. voice calls, live streaming)
-```
+
+`UDP only cares that the packages are not corrupted. Used for application that can tolerate some data loss. (I.e. voice calls, live streaming)`
 
 
 ### HTTP and HTTPS
+
 Hypertext Transfer Protocol. Request-Response based protocol.
 
 #### HTTP Request
 
 **Header**
+
 * Method - (GET {Retrieve}, POST {Send}, PUT {Update}, DELETE {Remove})
 * Path - Where the resource is located on the web server
 * Version - 1.1 and 2.0 most used
 * Headers - Additional information about the request and the client making it.
+
 ```
 Host: example.com
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9) ...
@@ -72,31 +67,36 @@ Accept: */*
 Accept-Language: en
 Content-Type: text/json
 ```
+
 Host of the server where the resource is requested from. Accept is what kind of content is accepted in the response. **Content-Type** indicates the type of content transmitted in the HTTP request's body
 
 **Body**
+
 * Body *(optional)* - For certain methods a body containing information exists
 
 #### HTTP Response:
 Similar Format to Request
 **Header**
+
 * Status Code - Indicate if HTTP Request successfully completed (100 to 599) grouped by purpose
-```
-Headers usually contain the date, information about the server, content-length which describes the length of the response and content-type which states the type of content included in the response body
-```
+
+`Headers usually contain the date, information about the server, content-length which describes the length of the response and content-type which states the type of content included in the response body`
 
 
 **Body**
+
 * Body *(optional)* - Image File, HTML, ...
 
 #### HTTP Status Codes
 * Informational - 100 to 199
+
 ```
 Interim (Before acutal response)
 Provisional?
 Status Code 100 Continue is the most common
 ```
 * Successful - 200 to 299
+
 ```
 Successfully processed by server
 200 OK is most common but meaning depends on Request Method
@@ -106,6 +106,7 @@ PUT = same as POST
 DELETE = successfully delteted resource
 ```
 * Redirection - 300 to 399
+
 ```
 Requested Resource has been moved to other path
 301 Moved Permanently
@@ -113,6 +114,7 @@ Requested Resource has been moved to other path
 Request for the new path will be executed automatically
 ```
 * Client Error - 400 to 499
+
 ```
 Bad syntax or content
 400 Bad Data
@@ -121,6 +123,7 @@ Bad syntax or content
 404 Resources not found
 ```
 * Server Error - 500 to 599
+
 ```
 500 internal server error
 ```
@@ -158,6 +161,7 @@ Often called gateway or middleware as it is the gate or in the middle in between
 * Geolocation API
 * Fetch API
 * ...
+
 ### REST API - Representational State Transfer
 Set of Principles to create efficient APIs
 
@@ -175,21 +179,20 @@ IoT based on this. Communicate with Sensors i.e. phillips hue sensors
 The first file is usually called *index.html*
 
 HTML consists of **tags** which have an opening and a closing tag.
-```
-<p>This is a <i>paragraph</i></p>
-```
 
-Elements can also be empty and/or self closing
-```
-<p>This is a <br/> paragraph</p>
-```
+`<p>This is a <i>paragraph</i></p>`
+
+Elements can also be empty and/or self closing 
+
+`<p>This is a <br/> paragraph</p>`
 
 ## Basic HTML
-```
+
+``` html
 <!DOCTYPE html>
 <html>
 	<head>
-		Nothing here is displayed on the actual website
+		<!-- Nothing in here is displayed on the actual website -->
 		<title>This will be displayed in the tab</title>
 	</head>
 	<body>
@@ -221,20 +224,21 @@ Elements can also be empty and/or self closing
 ### Tables
 
 Created using \<table>. \<tr> creates a new *row* and in this row each \<td> creates an entry. For the header within the table the \<th> tag can be used
-``` HTML
+
+``` html
 <table>
-    <tr>
-	    <th>Dish</th>
-		<th>Price</th>
-	</tr>
-	<tr>
-		<td>Falafel</td>
-		<td>10$</td>
-	</tr>
-	<tr>
-		<td>Pasta Salad</td>
-		<td>12$</td>
-	</tr>
+  <tr>
+    <th>Dish</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+	<td>Falafel</td>
+	<td>10$</td>
+  </tr>
+  <tr>
+	<td>Pasta Salad</td>
+	<td>12$</td>
+  </tr>
 </table>
 ```
 
@@ -242,7 +246,7 @@ Created using \<table>. \<tr> creates a new *row* and in this row each \<td> cre
 ## Forms
 Defined with the \<form> tag. If action is not set the request will be sent to the current endpoint. Method specifies with which HTTP method the request should be sent. 
 
-```
+``` html
 <form action="/registration" method="POST">
 	<label for="username">Username:</label><br>
 	<input type="text" name="username" />
@@ -258,7 +262,8 @@ With the \<label> tag it is possible to create a label for an input field. Each 
 
 ### Checkbox
 Multiple or all of the checkboxes can be selected
-```
+
+``` html
 <input type="checkbox" name="dog" value="Dog" />
 <label for="dog">I own a dog</label><br>
 
@@ -267,8 +272,9 @@ Multiple or all of the checkboxes can be selected
 ```
 
 ### Radio buttons
-Like checkboxes but only one can ever be selected. 
-```
+Like checkboxes but only one can ever be selected.
+ 
+``` html
 <input type="radio" name="right" value="Right" />
 <label for="right">I am right handed</label><br>
 
@@ -277,14 +283,15 @@ Like checkboxes but only one can ever be selected.
 ```
 
 ### Other input types
-```
+``` html
 <input type="number" name="left" />
 <input type="email" name="left" />
 <input type="file" name="left" />
 ```
 
-Some inputs do not use the input tag
-```
+### Input that doesn't use the \<input> tag
+
+``` html
 <!-- If multiple lines of text are needed as input use textarea -->
 <textarea name="multiline" rows="5"></textarea>
 
@@ -311,13 +318,14 @@ JavaScript can use the DOM to add, delete, change or animate content on the curr
 
 
 # CSS - Cascading Style Sheet
+
 *h1* is the the selector. This will affect all the h1 tags on the website.
 
 Thedeclaration block begins with { and ends wirh }
 
 The properties *color* and *background-color* are set to the *values* grey and red.
 
-```
+``` css
 h1 {
 	color: grey;
 	background-color: red;
@@ -329,78 +337,84 @@ A CSS file can be connected to an html file with the \<link> tag inside the html
 ## Selector Types
 There are several selector types
 * Element - Lets the developer change the style for a specfic html tag type. I.e. for all \<h1> tags.
-```
-HTML
-<p>New!</p>
 
-CSS
+``` html
+<p>New!</p>
+```
+
+```css
 p {
 	background-color: red;
 }
 ```
 
 * ID - Specifies the style for one specific element.
-```
-HTML
-<span id="latest">New!</span>
 
-CSS
+``` html
+<span id="latest">New!</span>
+```
+
+``` css
 #latest {
 	background-color: red;
 }
 ```
 
 * Class - Specifies the style for all elements with this class
-```
-HTML
+
+``` html
 <a class="navigation">Test1</a>
 <p class="navigation">Test2</p>
+```
 
-CSS
+``` css
 .navigation {
 	background-color: red;
 }
 ```
 
 * Element with Class - All p tags with the class
-```
-HTML
+
+``` html
 <a class="navigation">Test1</a>
 <p class="navigation">Test2</p>
+```
 
-CSS
+``` css
 p.navigation {
 	background-color: red;
 }
 ```
 
 * Descendant - Sets style for all elements within another one. Test1 and Test2 will be affected
-```
-HTML
+
+``` html
 <div id="mainDiv">
 	<p>Test1</>
 	<div>
 		<p>Test2</p>
 	</div>
 </div>
+```
 
-CSS
+``` css
 #mainDiv p {
 	background-color: red;
 }
 ```
 
 * Child - Only selects **immediate** descendants. Only Test1 will be affected
-```
-HTML
+
+``` html
 <div id="mainDiv">
 	<p>Test1</>
 	<div>
 		<p>Test2</p>
 	</div>
 </div>
+```
 
-CSS
+``` css
 #mainDiv > p {
 	background-color: red;
 }
@@ -408,12 +422,12 @@ CSS
 
 ### Pseudo classes
 The pseudo class *:hover* changes the links color to red when the user hovers above it with the mouse. A pseudo class is appended at the end of a selector.
+
 ``` html
-HTML
 <a>Test1</a>
+```
 
-
-CSS
+``` css
 a:hover {
 	color: red;
 }
@@ -421,6 +435,7 @@ a:hover {
 
 ## COLOR
 5 ways to reference a color
+
 * RGB
 * RGBA 
 * HSL
@@ -428,7 +443,7 @@ a:hover {
 * Predefined Color Names
 
 ## TEXT
-### Text Color
+
 * **color** - sets the color of the text itself
 * **font-family** - Lets the dev specify the font to use *(i.e. "Courier New")*
 * **font-size** - Lets the dev specify the font size *(i.e. 12px)*
@@ -439,6 +454,7 @@ a:hover {
 Every element has a Box. The Content itself is the *Content Box* (i.e the text or the image). After that there is the *padding* which is a space around the content. This space would also have a background if the property is set in css. Around that there is the *border* and around that the *margin*. The margin specifies the distance to other elements on the page.
 
 Padding, Border and Margin can be set all in one with a shorthand propert:
+
 * Padding: 4px 2px 1px 5px;
 * Margin: 4px 2px 1px 5px;
 * Border-width: 4px 2px 1px 5px;
@@ -454,5 +470,206 @@ Block elements occupy the entire horizontal space (the entire width), the height
 
 ` <div>, <form>, <h1-5>`
 
-## TEXT ALIGNMENT
-* **text-align** property
+## Text Alignment
+* **text-align** property: possible values are *left, right, center, justify*. Justify spaces the text so that each line of text has the same width.
+
+### Float
+The float property sets an elements position relative to the text content within a parent element. The text will wrap arount this element. The elemt whos float is set needs to be before the text that shall wrap around it. 
+
+* [CSS Refernce](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+* [HTML & CSS - Design and build Websites](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189/)
+* [CSS Definitive Guide](https://www.amazon.com/CSS-Definitive-Guide-Visual-Presentation/dp/1449393195/)
+
+`Rewatch "What are Forms"`
+
+# UI FRAMEWORKS
+
+## Dependencies
+Libraries need to be included in the final application. The application depends on them. Hence they are often called dependencies.
+
+When dependencies depend on other dependencies that forms a **dependency tree**
+
+A **package manager** handles dependencies. It will automatically download the appropriate version of a package and also install the entire dependency tree.
+
+Packages can be bundled into one single fileusing a **bundler** *(i.e. webpack)* to avoid having to include many libraries in the HTML file. 
+
+## Using Bootstrap
+
+Bootstrap is collection of pre-written css and javascript code chunks.
+
+Include the following in the header
+
+``` html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+		rel="stylesheet" 
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+		crossorigin="anonymous">
+```
+
+And somewhere in the body the following:
+
+``` html
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous">
+</script>
+```
+
+### Responsive design
+3 Practices
+
+* Flexible grids
+* Fluid images
+* Media queries
+
+Breakpoint is the point at which the UI adapts to fit a differe
+
+* Fixed width Grids have a fixed width and the rest is spaced with margin
+* Flui
+
+### Infixes
+
+**Breakpoints** are the triggers for how the UI changes on different devices *(i.e. different layout for screens with a width smaller than 720px)*
+
+<table>
+	<tr>
+		<th>Breakpoint</th>
+		<th>Class infix</th>
+		<th>Dimensions</th>
+	</tr>
+	<tr>
+		<th>Extra Small</th>
+		<th><em>No infix because default</em></th>
+		<th>< 576px</th>
+	</tr>
+	<tr>
+		<th>Small</th>
+		<th>sm</th>
+		<th>>= 576px</th>
+	</tr>
+	<tr>
+		<th>Medium</th>
+		<th>md</th>
+		<th>>= 768px</th>
+	</tr>
+	<tr>
+		<th>Large</th>
+		<th>lg</th>
+		<th>>= 992</th>
+	</tr>
+	<tr>
+		<th>Extra Large</th>
+		<th>xl</th>
+		<th>>= 1200px</th>
+	</tr>
+	<tr>
+		<th>Extra Extra Large</th>
+		<th>xxl</th>
+		<th>>= 1400px</th>
+	</tr>
+</table>
+
+### Modifiers
+
+* primary
+* secondary
+* success
+* info
+* warning
+* danger
+* light
+* dark
+
+### Bootstrap Grid System
+Grid uses a 12 column grid system that can be fluid or fixed.
+
+Always has container, rows and columns.
+**container** is the root element of the grid. Always starts with this.
+
+``` html
+<div class="container">
+  <div class="row">
+    <!-- On devices smaller than 'lg' each column will take up the entire space -->
+    <!-- On devices larger or equal to 'lg' each column will take up half the space -->
+    <div class="col-12 col-lg-6">
+    	<h1>Burger</h1>
+    </div>
+    <div class="col-12 col-lg-6">
+    	<h1>Fries</h1>
+    </div>
+  </div>
+</div>
+```
+
+### Bootstrap Components
+
+The Documentation has everything one can wish for.
+
+Some interesting things are
+
+`Input Groups, Navbar, Forms `
+
+### Other Framworks
+
+* Foundation
+* Pure.css
+* Tailwind
+
+# STATIC VS DYNAMIC CONTENT
+
+Static content is files that are transferred as is. For example videos or images.
+
+Dynamic content is generated when the HTTP request is made
+
+
+Web Server talks to an application server/backend. The application server generates the content that the web server then sends to the client. The web server caches dynamic content to reduce stress on the application server. 
+
+## Single Page Applications (SPAs)
+One HTML page that gets sent form server to browser. The page updates it's content.
+
+There are two approaches:
+
+1. Bundling - Server returns all needed data. 
+2. Lazy Loading - Send only the necessary data and load additional content on demand only when needed
+
+# REACT
+
+Can develop SPAs or Mobile applications with React Native
+
+[SPA vs Traditional Web App](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/choose-between-traditional-web-and-single-page-apps)
+
+**`Define components that can be reused and combined into a website`**
+
+There are react component libraries for different needs. Video player components, Map components.
+
+## How it works
+React Element has 1 to 1 realtion to an HTML element on the website
+
+Builds a virtual dom anch checks if that differs from the DOM in the browser. If so an update is made. If not no update is needed. This whole process is called **reconciliation**
+
+```
+If there was a change the virtual DOM get updated
+The new virtual DOM is checked against the old virtual DOM to identify if there were any changes and if so where.
+Only the changed elements are then changed in the web browsers DOM causing the website to change
+```
+
+Furthermore updates to the browser are spread out through time. If a change occurs that is not visible on the browser it does not need to be updated right away. Rather a change that affects something that is currently visible will be prioritized. This technology is called **React Fiber Architecture**
+
+## Component Hierarchy
+
+It always starts with the Root - *App* - component. After that usually a Navbar Component and a Main Body Component. These in turn contain other components.
+
+## Complementary libraries
+
+* Lodash - Sort Lists, Round Numbers
+* Luxon - Date and Time Formatting
+* Redux - Keep track of state of the state. (Shopping cart)
+* Axios - Simplify sendinding HTTP Request (for example with APIs)
+* Jest - JavaScript testing
+
+
+
+
+
+
+
